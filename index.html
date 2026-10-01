@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SiagaBencana | Peringatan Bencana Alam</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🌋 SiagaBencana
+        </div>
+
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#peringatan">Peringatan</a>
+            <a href="#panduan">Panduan</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="beranda">
+
+        <div class="hero-content">
+
+            <div class="label">
+                🚨 SISTEM PERINGATAN BENCANA
+            </div>
+
+            <h1>
+                Tetap Waspada,
+                <span>Selalu Siap.</span>
+            </h1>
+
+            <p>
+                Website informasi peringatan bencana alam
+                yang membantu masyarakat mengetahui kondisi
+                bencana dan langkah keselamatan.
+            </p>
+
+            <a href="#peringatan" class="btn">
+                Lihat Peringatan
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+            🚨
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATUS ================= -->
+
+    <section class="status-container">
+
+        <div class="status-card">
+
+            <div class="status-icon green">
+                ✓
+            </div>
+
+            <div>
+                <h3>Status Sistem</h3>
+                <p>Normal</p>
+            </div>
+
+        </div>
+
+
+        <div class="status-card">
+
+            <div class="status-icon orange">
+                !
+            </div>
+
+            <div>
+                <h3>Peringatan Aktif</h3>
+                <p id="jumlah">4 Peringatan</p>
+            </div>
+
+        </div>
+
+
+        <div class="status-card">
+
+            <div class="status-icon blue">
+                📍
+            </div>
+
+            <div>
+                <h3>Wilayah</h3>
+                <p>Indonesia</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PERINGATAN ================= -->
+
+    <section class="section" id="peringatan">
+
+        <div class="section-header">
+
+            <div>
+
+                <span>INFORMASI TERKINI</span>
+
+                <h2>
+                    Peringatan Bencana
+                </h2>
+
+            </div>
+
+
+            <select id="filterBencana">
+
+                <option value="semua">
+                    Semua Bencana
+                </option>
+
+                <option value="banjir">
+                    Banjir
+                </option>
+
+                <option value="gempa">
+                    Gempa Bumi
+                </option>
+
+                <option value="longsor">
+                    Tanah Longsor
+                </option>
+
+                <option value="gunung">
+                    Gunung Api
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- BANJIR -->
+
+            <div class="card" data-type="banjir">
+
+                <div class="card-header">
+
+                    <div class="icon blue-bg">
+                        🌊
+                    </div>
+
+                    <span class="status waspada">
+                        WASPADA
+                    </span>
+
+                </div>
+
+                <h3>Banjir</h3>
+
+                <p class="location">
+                    📍 Sukabumi, Jawa Barat
+                </p>
+
+                <p>
+                    Potensi peningkatan debit air akibat
+                    hujan dengan intensitas tinggi.
+                </p>
+
+                <button
+                    onclick="bukaDetail(
+                    'Banjir',
+                    'Sukabumi, Jawa Barat',
+                    'WASPADA',
+                    'Masyarakat di sekitar sungai dan daerah rendah diimbau meningkatkan kewaspadaan terhadap kenaikan debit air.'
+                    )">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+
+
+            <!-- GEMPA -->
+
+            <div class="card" data-type="gempa">
+
+                <div class="card-header">
+
+                    <div class="icon yellow-bg">
+                        🌎
+                    </div>
+
+                    <span class="status siaga">
+                        SIAGA
+                    </span>
+
+                </div>
+
+                <h3>Gempa Bumi</h3>
+
+                <p class="location">
+                    📍 Jawa Barat
+                </p>
+
+                <p>
+                    Masyarakat diimbau tetap tenang dan
+                    mengikuti informasi resmi.
+                </p>
+
+                <button
+                    onclick="bukaDetail(
+                    'Gempa Bumi',
+                    'Jawa Barat',
+                    'SIAGA',
+                    'Tetap tenang, berlindung di tempat yang aman dan jauhi bangunan yang berpotensi roboh.'
+                    )">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+
+
+            <!-- LONGSOR -->
+
+            <div class="card" data-type="longsor">
+
+                <div class="card-header">
+
+                    <div class="icon red-bg">
+                        ⛰️
+                    </div>
+
+                    <span class="status darurat">
+                        DARURAT
+                    </span>
+
+                </div>
+
+                <h3>Tanah Longsor</h3>
+
+                <p class="location">
+                    📍 Daerah Perbukitan
+                </p>
+
+                <p>
+                    Warga di daerah lereng diimbau
+                    meningkatkan kewaspadaan.
+                </p>
+
+                <button
+                    onclick="bukaDetail(
+                    'Tanah Longsor',
+                    'Daerah Perbukitan',
+                    'DARURAT',
+                    'Segera menjauh dari lereng yang tidak stabil dan ikuti arahan petugas apabila dilakukan evakuasi.'
+                    )">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+
+
+            <!-- GUNUNG API -->
+
+            <div class="card" data-type="gunung">
+
+                <div class="card-header">
+
+                    <div class="icon orange-bg">
+                        🌋
+                    </div>
+
+                    <span class="status normal">
+                        NORMAL
+                    </span>
+
+                </div>
+
+                <h3>Gunung Api</h3>
+
+                <p class="location">
+                    📍 Wilayah Gunung Api
+                </p>
+
+                <p>
+                    Aktivitas gunung api masih dalam
+                    pemantauan.
+                </p>
+
+                <button
+                    onclick="bukaDetail(
+                    'Gunung Api',
+                    'Wilayah Gunung Api',
+                    'NORMAL',
+                    'Tetap mengikuti informasi resmi dan tidak memasuki kawasan yang ditetapkan sebagai zona berbahaya.'
+                    )">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PANDUAN ================= -->
+
+    <section class="panduan" id="panduan">
+
+        <div class="judul-tengah">
+
+            <span>PANDUAN KESELAMATAN</span>
+
+            <h2>
+                Apa yang Harus Dilakukan?
+            </h2>
+
+            <p>
+                Persiapkan diri sebelum, saat, dan setelah
+                terjadi bencana.
+            </p>
+
+        </div>
+
+
+        <div class="panduan-container">
+
+
+            <div class="panduan-card">
+
+                <div class="nomor">
+                    01
+                </div>
+
+                <div class="panduan-icon">
+                    🎒
+                </div>
+
+                <h3>
+                    Sebelum Bencana
+                </h3>
+
+                <ul>
+                    <li>Siapkan tas darurat</li>
+                    <li>Simpan dokumen penting</li>
+                    <li>Kenali jalur evakuasi</li>
+                    <li>Siapkan obat-obatan</li>
+                </ul>
+
+            </div>
+
+
+            <div class="panduan-card">
+
+                <div class="nomor">
+                    02
+                </div>
+
+                <div class="panduan-icon">
+                    🚨
+                </div>
+
+                <h3>
+                    Saat Bencana
+                </h3>
+
+                <ul>
+                    <li>Tetap tenang</li>
+                    <li>Ikuti arahan petugas</li>
+                    <li>Menuju tempat aman</li>
+                    <li>Hindari daerah berbahaya</li>
+                </ul>
+
+            </div>
+
+
+            <div class="panduan-card">
+
+                <div class="nomor">
+                    03
+                </div>
+
+                <div class="panduan-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    Setelah Bencana
+                </h3>
+
+                <ul>
+                    <li>Periksa kondisi keluarga</li>
+                    <li>Hindari bangunan rusak</li>
+                    <li>Gunakan informasi resmi</li>
+                    <li>Bantu orang sekitar</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= KONTAK ================= -->
+
+    <section class="kontak" id="kontak">
+
+        <div>
+
+            <span>KONTAK DARURAT</span>
+
+            <h2>
+                Dalam Keadaan Darurat?
+            </h2>
+
+            <p>
+                Hubungi layanan darurat atau petugas
+                setempat sesuai kondisi dan wilayah Anda.
+            </p>
+
+        </div>
+
+
+        <div class="nomor-darurat">
+
+            <div>📞</div>
+
+            <strong>112</strong>
+
+            <small>
+                Nomor Darurat
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div>
+
+            <h3>
+                🌋 SiagaBencana
+            </h3>
+
+            <p>
+                Website edukasi sistem peringatan bencana alam.
+            </p>
+
+        </div>
+
+        <p>
+            © 2026 SiagaBencana
+        </p>
+
+    </footer>
+
+
+    <!-- ================= MODAL ================= -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-box">
+
+            <button
+                class="close"
+                onclick="tutupModal()">
+
+                ×
+
+            </button>
+
+            <div class="modal-icon">
+                🚨
+            </div>
+
+            <h2 id="modalNama">
+                Banjir
+            </h2>
+
+            <p id="modalLokasi">
+                📍 Sukabumi
+            </p>
+
+            <span
+                class="modal-status"
+                id="modalStatus">
+
+                WASPADA
+
+            </span>
+
+            <p id="modalDeskripsi">
+                Informasi bencana.
+            </p>
+
+            <button
+                class="btn-modal"
+                onclick="tutupModal()">
+
+                Saya Mengerti
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= NOTIFIKASI ================= -->
+
+    <div
+        class="notifikasi"
+        id="notifikasi">
+
+        <span>
+            🚨
+        </span>
+
+        <div>
+
+            <strong>
+                Peringatan Bencana
+            </strong>
+
+            <p id="pesanNotifikasi">
+                Terdapat peringatan baru.
+            </p>
+
+        </div>
+
+        <button
+            onclick="tutupNotifikasi()">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
